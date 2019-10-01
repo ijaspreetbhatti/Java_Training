@@ -1,0 +1,10 @@
+
+class MyFirstProgram {
+	public static void main(String[] args) {
+		System.out.println("We are just trying Java...");
+		System.out.println("We are just trying Java...");
+		System.out.println("We are just trying Java...");
+		System.out.println("We are just trying Java...");
+		System.out.println("We are just trying Java...");
+	}
+}
