@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - VarArgsDemo",
+            "request": "launch",
+            "mainClass": "VarArgsDemo",
+            "projectName": "Java_Training_ba246029"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ConstructorsDemo",
+            "request": "launch",
+            "mainClass": "ConstructorsDemo",
+            "projectName": "Java_Training_ba246029"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ConstructorDemo",
+            "request": "launch",
+            "mainClass": "ConstructorDemo",
+            "projectName": "Java_Training_ba246029"
+        }
+    ]
+}
