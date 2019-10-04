@@ -1,0 +1,8 @@
+Memory Management - Garbage Collection
+  
+  no such thing as delete(obj)
+
+ -Nulling the reference
+ -Reassigning the variable
+ -When an object goes out of context
+ 
