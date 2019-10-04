@@ -9,7 +9,7 @@ class VarArgsDemo{
 
 
 
-	void add(int... values){
+	void add(float var, int... values){
 		int total = 0;
 
 		for(int val : values){
