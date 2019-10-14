@@ -19,7 +19,7 @@ class MixingGenerics{
 
 class PreJava5{
 	void cal(java.util.List myList){
-		// String value = (String)myList.get(0);// Fingers crossed
+		//String value = (String)myList.get(0);// Fingers crossed
 		myList.add(789.76);
 
 	}

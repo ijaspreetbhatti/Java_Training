@@ -20,14 +20,14 @@ class PolyGenericsDemo{
 
 		// new PolyGenericsDemo().other(set);
 
-		Set<Human> setHuman = new HashSet<>();
+		Set<?> setHuman = new HashSet<>();
 
 		new PolyGenericsDemo().changesToSet(setHuman);
 
 	}
 
 // Accepts any set with type Object or a sublass of Object but we cannot add to this set
-	void other(Set<? extends Object> set){
+	void other(Set<?> set){
 		 // String str = (String)set.get(0);
 
 		 // set.add("hello"); // Fails, cannot even add a String to this set
@@ -35,22 +35,22 @@ class PolyGenericsDemo{
 	}
 
 
-	void changesToSet(Set<? super String> set){
-		 // String str = (String)set.get(0);
+	void changesToSet(Set<?> setHuman) {
+		// String str = (String)set.get(0);
 
-		   set.add(new Human()); 
-		   set.add(new Sneha()); 
+		setHuman.add(new String());
+		setHuman.add(new Integer());
 		  // set.add(new Company());
 
 	}
 
 
-	List<? extends Object> list;
+	/* List<? extends Object> list;
 	
 
 
 	List<Object> list;
-	List<?> list;
+	List<?> list; */
 
 
 
