@@ -1,0 +1,46 @@
+
+	Collections API
+		- java.util
+	    - can only store objects
+	    - Growable, Shrinkable
+	    - Searchable
+	    - Sortable
+	    - never specify the size
+
+
+	Ordering, Sorting
+
+	int []arr = new int[4];
+
+	arr[0] = 8787;
+	arr[1] = 22;
+	arr[2] = 444;
+	arr[3] = -9;
+
+	for (int value : arr) {
+		System.out.println(value);
+	}
+
+		// -9 22 444 8787
+
+		// 444 22 8787 -9
+
+
+	   // 
+
+	List (When duplicacy isn't a concern)
+		- Vector (Legacy Class, has been deprecated)
+		- ArrayList (Access Rate is fast)
+		- LinkedList (many insertions and deletions involved)
+	Set (No duplicates allowed)
+		- HashSet
+		- TreeSet
+		- HashTable (Legacy class)
+	Map (Key/Value pairs)
+		- HashMap
+		- TreeMap
+
+
+
+
+
