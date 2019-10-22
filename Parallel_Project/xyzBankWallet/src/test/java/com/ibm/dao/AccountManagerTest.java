@@ -10,24 +10,31 @@ import com.ibm.bean.Transaction;
 
 class AccountManagerTest {
 	
+	AccountManager accountManager;
+	
 	@Test
 	void testCreateAccount() throws ClassNotFoundException, SQLException {
-		AccountManager accountManager = new AccountManager();
+		accountManager = new AccountManager();
+		// Have to refer database to know what would be the new account 
+		assertEquals(107, accountManager.createAccount("James", 8888877888l, "New York"));
 	}
 
 	@Test
-	void testGetBalance() {
-		fail("Not yet implemented");
+	void testGetBalance() throws ClassNotFoundException, SQLException {
+		accountManager = new AccountManager();
+		assertEquals(0, accountManager.getBalance(107));
 	}
 
 	@Test
-	void testGetTransactions() {
-		fail("Not yet implemented");
+	void testGetTransactions() throws SQLException, ClassNotFoundException {
+		accountManager = new AccountManager();
+		assertEquals(null, accountManager.getTransactions(107));
 	}
 
 	@Test
-	void testCheckAccount() {
-		fail("Not yet implemented");
+	void testCheckAccount() throws ClassNotFoundException, SQLException {
+		accountManager = new AccountManager();
+		assertEquals(true, accountManager.checkAccount(107));
 	}
 
 }

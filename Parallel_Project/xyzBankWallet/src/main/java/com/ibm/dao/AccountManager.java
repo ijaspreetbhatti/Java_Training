@@ -47,7 +47,7 @@ public class AccountManager implements AccountManagerInterface {
 
 	@Override
 	public ArrayList<Transaction> getTransactions(long accountNumber) throws SQLException {
-		ArrayList<Transaction> transactionsList = new ArrayList<>();
+		ArrayList<Transaction> transactionsList = null;
 
 		stmt = dbCon.prepareStatement("select * from transactions where accountNumber=?");
 		stmt.setLong(1, accountNumber);
@@ -58,6 +58,7 @@ public class AccountManager implements AccountManagerInterface {
 			long amount = rs.getLong("amount");
 			String date = rs.getString("date");
 			String type = rs.getString("type");
+			transactionsList = new ArrayList<>();
 			transactionsList.add(new Transaction(transactionId, amount, date, type));
 		}
 		return transactionsList;
