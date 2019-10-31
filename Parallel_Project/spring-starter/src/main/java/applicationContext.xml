@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+        
+  <!-- Define the beans here  -->  
+  
+  <beans>
+  	<bean class="com.ibm.training.Engineer" id="myEngineer">
+  		
+  		<!-- Inject the value here: setter injection -->
+  		<property name="engName" value="Aditya"></property>
+  		<property name="engId" value="27727"></property>
+  	</bean>
+  	
+  	<bean class="com.ibm.training.SoftwareEngineer" id="softwareEngineer">
+  		<!-- Constructor injection here -->
+  		
+  		<constructor-arg value="7363" type="java.lang.Integer" index="1"></constructor-arg>
+  		<constructor-arg value="Kamraj" type="java.lang.String" index="0"></constructor-arg>
+  	</bean>
+  	
+  	<bean class="com.ibm.training.CivilEngineer" id="civilEng">
+  		<property name="addresses">
+  		
+  		<!--Initialize the list here  -->
+  			<list>
+  				<ref bean="address1"/>
+  				<ref bean="address2"/>
+  				<ref bean="address3"/>
+  			</list>
+  		</property>
+  	</bean>
+  	
+  	
+  	<bean class="com.ibm.training.NetworkEngineer" id="netEng" name="aliasEngineer" scope="singleton">
+  		
+  		<!-- Example of an inner bean  -->
+  		<property name="address1">
+  			<bean class="com.ibm.training.Address">
+  				<property name="location" value="My Native Place"></property>
+  				<property name="pinCode" value="111110"></property>
+  			</bean>
+  		</property>
+  		
+  		<property name="address2" ref="address2"></property>
+  	</bean>
+  	
+  	
+  	
+  	<!-- Define the bean for address -->
+  	
+  	<bean class="com.ibm.training.Address" id="address1">
+  		<property name="location" value="Bangalore"></property>
+  		<property name="pinCode" value="450065"></property>
+  	</bean>
+  	
+  	<bean class="com.ibm.training.Address" id="address2">
+  		<property name="location" value="Pune"></property>
+  		<property name="pinCode" value="110087"></property>
+  	</bean>
+  	
+  	<bean class="com.ibm.training.Address" id="address3">
+  		<property name="location" value="Culcutta"></property>
+  		<property name="pinCode" value="662265"></property>
+  	</bean>
+  	
+  	
+  	<!-- Example of autowire here : byName | byType | contructor -->
+  	<bean class="com.ibm.training.AutoEngineer" id="autoEngineer" init-method="myInit" destroy-method="myDestroy" autowire="constructor">
+  	
+  	</bean>
+  	
+  	
+  	
+  	
+  	
+  	<!-- <alias name="eg" alias="firstAddress"/> -->
+  	
+  	
+  	
+  </beans>    

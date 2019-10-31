@@ -14,6 +14,7 @@ public class AccountManagementService implements AccountManagementServiceInterfa
 		try {
 			accountNumber = (new AccountManager().createAccount(name, phoneNumber, address));
 		} catch (ClassNotFoundException | SQLException e) {
+			System.out.println(e);
 		}
 		if (accountNumber == -1) {
 			return "Account Creation Failed! Try Again Later!!!";
@@ -27,6 +28,7 @@ public class AccountManagementService implements AccountManagementServiceInterfa
 		try {
 			balance = new AccountManager().getBalance(accountNumber);
 		} catch (ClassNotFoundException | SQLException e) {
+			System.out.println(e);
 		}
 		return balance;
 	}
@@ -36,7 +38,11 @@ public class AccountManagementService implements AccountManagementServiceInterfa
 		ArrayList<Transaction> transactionsList = null;
 		try {
 			transactionsList = new AccountManager().getTransactions(accountNumber);
+			for (Transaction transaction : transactionsList) {
+				System.out.println(transaction.toString());
+			}
 		} catch (ClassNotFoundException | SQLException e) {
+			System.out.println(e);
 		}
 		return transactionsList;
 	}
@@ -47,6 +53,7 @@ public class AccountManagementService implements AccountManagementServiceInterfa
 		try {
 			isAnAccount = new AccountManager().checkAccount(accountNumber);
 		} catch (ClassNotFoundException | SQLException e) {
+			System.out.println(e);
 		}
 		return isAnAccount;
 	}

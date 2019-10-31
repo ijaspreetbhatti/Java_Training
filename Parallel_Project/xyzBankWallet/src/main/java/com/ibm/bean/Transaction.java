@@ -12,6 +12,12 @@ public class Transaction {
 		this.type = type;
 	}
 
+	@Override
+	public String toString() {
+		return "Transaction [amount=" + amount + ", date=" + date + ", type=" + type + ", transactionId="
+				+ transactionId + "]";
+	}
+
 	public long getAmount() {
 		return amount;
 	}

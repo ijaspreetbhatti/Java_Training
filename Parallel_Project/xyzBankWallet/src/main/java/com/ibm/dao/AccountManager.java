@@ -52,14 +52,16 @@ public class AccountManager implements AccountManagerInterface {
 		stmt = dbCon.prepareStatement("select * from transactions where accountNumber=?");
 		stmt.setLong(1, accountNumber);
 		ResultSet rs = stmt.executeQuery();
-
+		transactionsList = new ArrayList<>();
 		while (rs.next()) {
 			long transactionId = rs.getLong("id");
 			long amount = rs.getLong("amount");
 			String date = rs.getString("date");
 			String type = rs.getString("type");
-			transactionsList = new ArrayList<>();
 			transactionsList.add(new Transaction(transactionId, amount, date, type));
+		}
+		for (Transaction transaction : transactionsList) {
+			System.out.println(transaction.toString());
 		}
 		return transactionsList;
 	}
